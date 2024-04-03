@@ -32,19 +32,19 @@ function Chat() {
   const sendMessage = () => {
     const roomId = `chat_${userId}_${adminId}`;
     if (message !== '') {
-      socket.emit('send_message', { roomId, message, senderId: senderId });
+      socket.emit('send_message', { roomId, message, senderId: senderId,vendorId:senderId, userId:userId });
       setMessage(''); // Clear the input after sending
     }
   };
 console.log(messages,"messages")
   return (
     <div>
-      {/* <input
+      <input
         type="text"
         placeholder="Your User ID"
         value={userId}
         onChange={(e) => setUserId(e.target.value)}
-      /> */}
+      />
       <input
         type="text"
         placeholder="Admin ID"
